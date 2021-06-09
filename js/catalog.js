@@ -14,7 +14,7 @@ function populateForm() {
   for (let i in Product.allProducts) {
   let optionTag= document.createElement('option');
   selectElement.appendChild(optionTag);
-  optionTag.textContent(Product.allProducts[i]);
+  optionTag.textContent(Product.allProducts[i].name);
   }
 
 }
@@ -26,7 +26,7 @@ function handleSubmit(event) {
 
   // TODO: Prevent the page from reloading
   event.preventDefault();
-  
+
   // Do all the things ...
   addSelectedItemToCart();
   cart.saveToLocalStorage();
@@ -40,11 +40,11 @@ function addSelectedItemToCart() {
   // TODO: suss out the item picked from the select list
   // TODO: get the quantity
   // TODO: using those, add one item to the Cart
+ let selectItem=document.getElementById("items").nodeValue;
 }
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart
 function updateCounter() {}
-
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
 function updateCartPreview() {
   // TODO: Get the item and quantity from the form
